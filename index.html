@@ -260,15 +260,6 @@ td:nth-child(2){white-space:nowrap}
 .qrow p{margin:0;color:var(--text-2);font-size:13px;max-width:760px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .qrow .acts{display:flex;gap:8px}
 
-/* matrix */
-.mx input{border:1px solid var(--border-2);background:var(--surface);border-radius:8px;height:34px;padding:0 10px;width:100%;max-width:260px}
-.mx input:focus,.rule select:focus,.rule input:focus{border-color:var(--primary);outline:0;box-shadow:0 0 0 3px var(--primary-ring)}
-.rules{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:16px}
-.rule{padding:16px 18px}
-.rule b{display:block;font-size:13.5px;margin-bottom:4px}
-.rule p{margin:0 0 10px;color:var(--text-3);font-size:12.5px}
-.rule .ctl{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:13px;color:var(--text-2)}
-.rule select,.rule input{border:1px solid var(--border-2);background:var(--surface);border-radius:8px;height:34px;padding:0 10px}
 
 /* drawer */
 .scrim{position:fixed;inset:0;background:rgba(17,24,39,.4);opacity:0;pointer-events:none;transition:opacity .2s;z-index:20}
@@ -318,6 +309,71 @@ td:nth-child(2){white-space:nowrap}
 .toast::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--brand-green);flex:none}
 .toast.on{opacity:1;transform:none}
 .loading{padding:80px 0;text-align:center;color:var(--text-3)}
+
+
+/* approval matrix */
+.srcbar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:10px 14px;margin-bottom:14px;font-size:13px;color:var(--text-2)}
+.srcbar .grow{flex:1;min-width:240px}
+.srcbar b{color:var(--text);font-weight:600}
+.srcbar .dot{width:8px;height:8px;border-radius:50%;background:var(--amber-d);flex:none}
+.srcbar.live .dot{background:var(--green-d)} .srcbar.err .dot{background:var(--red-d)}
+.srcbar .sep{width:1px;height:20px;background:var(--border)}
+#gsiBtn{min-height:32px}
+.editbar{display:flex;align-items:center;gap:8px 10px;flex-wrap:wrap;padding:10px 14px;margin-bottom:14px;position:sticky;top:68px;z-index:4;border-color:var(--primary);background:var(--primary-soft)}
+.editbar .grow{flex:1}
+.issues{margin-bottom:14px;border-color:var(--amber-d)}
+.issues .card-h{color:var(--amber-t)} .issues .card-h h2{color:var(--amber-t)}
+.issues ul{margin:0;padding:10px 18px 12px 36px;font-size:13px;color:var(--text-2)}
+.issues li{padding:2px 0}
+.linkbtn{all:unset;cursor:pointer;color:var(--primary)} .linkbtn:hover{text-decoration:underline}
+.mxcard .tablewrap{max-height:calc(100vh - 260px);overflow:auto}
+table.mxg{min-width:0;width:max-content;border-collapse:separate;border-spacing:0}
+.mxg th,.mxg td{padding:8px 10px;vertical-align:top;border-bottom:1px solid var(--border);border-right:1px solid var(--border)}
+.mxg td:first-child,.mxg th:first-child{min-width:0}
+.mxg td:nth-child(2){white-space:normal}
+.mxg thead th{position:sticky;top:0;z-index:2;white-space:normal;width:150px;min-width:150px;max-width:170px;line-height:1.35;vertical-align:bottom}
+.mxg thead th span{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.mxg th.lv{position:sticky;left:0;z-index:1;background:var(--surface);min-width:150px;width:150px}
+.mxg thead th.lv{z-index:3;background:var(--subtle)}
+.lvb{display:flex;flex-direction:column;text-align:left;gap:1px}
+.lvb b{font-size:13.5px;color:var(--text)} .lvb span{font-size:12.5px;color:var(--text-2);font-weight:500} .lvb small{font-size:11px;color:var(--text-3);font-weight:400}
+.hbtn{all:unset;cursor:pointer;display:block;border-radius:6px;padding:2px 4px;margin:-2px -4px;color:inherit}
+.hbtn:hover{background:var(--hover);color:var(--primary)}
+.hbtn.lvb{display:flex;flex-direction:column}
+.hbtn:focus-visible,.cellbtn:focus-visible{outline:2px solid var(--primary)}
+.cellbtn{all:unset;cursor:pointer;display:block;width:100%;min-height:28px;border-radius:6px;padding:2px;margin:-2px;box-sizing:border-box}
+.cellbtn:hover{background:var(--primary-soft)}
+.aps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:4px}
+.aps li{display:flex;align-items:center;gap:6px;font-size:12.5px;color:var(--text);white-space:nowrap}
+.aps li+li{position:relative}
+.aps .flag svg{width:13px;height:13px;color:var(--red-d)}
+.ap.none{font-size:12px;color:var(--red-t)}
+.av.xs{width:18px;height:18px;font-size:8px}
+.mxg td.chg,.mxg th.chg{background:var(--amber-b)}
+.mxg td.bad{background:var(--red-b)}
+.mxfoot{display:flex;gap:8px;align-items:center;padding:10px 16px}
+.mxlog{list-style:none;margin:0;padding:0}
+.mxlog li{padding:12px 18px;border-bottom:1px solid var(--border)} .mxlog li:last-child{border-bottom:0}
+.mxlog li div{display:flex;gap:10px;align-items:baseline} .mxlog small{color:var(--text-3);font-size:12px}
+.mxlog pre{margin:4px 0 0;font:12.5px/1.5 inherit;font-family:inherit;color:var(--text-2);white-space:pre-wrap}
+.aplist{display:flex;flex-direction:column;gap:10px}
+.aprow{display:flex;align-items:flex-start;gap:6px}
+.aprow .grow{flex:1;min-width:0}
+.aprow input{width:100%;border:1px solid var(--border-2);background:var(--surface);border-radius:8px;height:36px;padding:0 10px}
+.aprow input:focus,.f input:focus{border-color:var(--primary);outline:0;box-shadow:0 0 0 3px var(--primary-ring)}
+.stepn{width:26px;height:26px;margin-top:5px;border-radius:50%;display:grid;place-items:center;font-size:11px;font-weight:700;border:1px solid var(--border-2);flex:none;color:var(--text-2)}
+.aphint{font-size:12px;color:var(--text-3);margin-top:3px} .aphint.bad{color:var(--red-t)}
+.iconbtn[disabled]{opacity:.35;pointer-events:none}
+svg.up{transform:rotate(-90deg)} svg.down{transform:rotate(90deg)}
+.drawer details{border:1px solid var(--border);border-radius:8px;padding:8px 12px;margin-bottom:8px}
+.drawer summary{cursor:pointer;font-weight:600;font-size:13px}
+.ckgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 12px;margin-top:10px}
+.ck2{display:flex;gap:8px;align-items:center;font-size:13px}
+.row-btns{display:flex;gap:8px;flex-wrap:wrap}
+.drawer .f{display:flex;flex-direction:column;gap:6px}
+.callout.warn{background:var(--amber-b);border-color:var(--amber-d);color:var(--amber-t)} .callout.warn svg{color:var(--amber-t)}
+.chglist{margin:0;padding-left:18px;font-size:13px;color:var(--text-2);display:flex;flex-direction:column;gap:6px}
+@media (max-width:860px){.editbar{top:0}.ckgrid{grid-template-columns:1fr}.mxcard .tablewrap{max-height:none}}
 
 .mnav{display:none}
 @media (max-width:1180px){.grid2,.formgrid{grid-template-columns:1fr}.aside{position:static}.rules{grid-template-columns:1fr}}
@@ -370,60 +426,62 @@ td:nth-child(2){white-space:nowrap}
 <script>
 (function(){
 const H=36e5, D=24*H;
-const LEVELS=["IC1","IC2","IC3","IC4","IC5","IC6","IC7"];
-const DEFAULT_MATRIX={
-  depts:[
-    {name:"Delivery & PMO", head:"Ash"},
-    {name:"Engineering", head:"Head of Engineering"},
-    {name:"Sales & Growth", head:"Head of Growth"},
-    {name:"Product", head:"Head of Product"},
-    {name:"Operations & Finance", head:"Head of Operations"},
-    {name:"People", head:"Head of People"}
-  ],
-  exec:"Kasra", execFrom:5, final:"Kylee"
-};
-const VIEWERS=[
-  {id:"HR", label:"Talent Acquisition (HR)"},
-  {id:"Ash", label:"Ash, Head of Delivery & PMO"},
-  {id:"Kasra", label:"Kasra, Exec approver (IC5+)"},
-  {id:"Kylee", label:"Kylee, Final approver"},
-  {id:"Hina", label:"Hina, Requester"}
-];
+/* ---------- configuration ----------
+   SHEET_API_URL: the Apps Script web app URL (see apps-script/README.md). Empty = demo mode.
+   GOOGLE_CLIENT_ID: OAuth web client ID for "Sign in with Google". Needed to edit the live sheet.
+   SHEET_URL: link to the Google Sheet, shown on the matrix page. */
+const CONFIG=Object.assign({
+  SHEET_API_URL:"",
+  GOOGLE_CLIENT_ID:"",
+  SHEET_URL:"https://docs.google.com/spreadsheets/d/10P5MzRRx5x6WjJHRC6HDXt1vmHUsueA_lefc1va_zKs/edit",
+  DOMAIN:"aaico.com"
+},(typeof window!=="undefined"&&window.RR_CONFIG)||{});
+
+/* Snapshot of the HR sheet (Approval Matrix - Level x Department). Used in demo mode and as a fallback. */
+const DEFAULT_MATRIX=(()=>{const A="arya.bolurfrushan@aaico.com",K="kasra.pezeshki@aaico.com",KG="kasra.pezeshki@gmail.com";
+return {"levels":[{"code":"E1","title":"SVP","track":"Executive"},{"code":"M6","title":"VP","track":"Management"},{"code":"M5","title":"Director","track":"Management"},{"code":"M4","title":"Senior Manager / Head","track":"Management"},{"code":"IC5","title":"Principal","track":"Individual Contributor"},{"code":"M3","title":"Manager","track":"Management"},{"code":"IC4","title":"Lead","track":"Individual Contributor"},{"code":"M2","title":"Team Lead","track":"Management"},{"code":"IC3","title":"Senior Specialist","track":"Individual Contributor"},{"code":"IC2","title":"Specialist","track":"Individual Contributor"},{"code":"IC1","title":"Associate","track":"Individual Contributor"}],"depts":["CEO Office","Delivery (including Delivery & Customer Support)","Engineering","Finance","GTM (Including Sales, Enablement, Partnerships, Marketing, Solutions)","HR","Operations","Product","R&D","AI"],"cells":[[[A],["kris.karcher@aaico.com",K,A],["raed.abusanad@aaico.com",K,A],[K,A],["nabil.mansouri@aaico.com",K,A],["kylee.hutchings@aaico.com",K,A],["kylee.hutchings@aaico.com",K,A],["jonathan.assayag@aaico.com",KG,A],["phillip.kingston@aaico.com",K,A],["phillip.kingston@aaico.com",K,A]],[[A],["kris.karcher@aaico.com",K,A],["raed.abusanad@aaico.com",K,A],[K,A],["nabil.mansouri@aaico.com",K,A],["kylee.hutchings@aaico.com",K,A],["kylee.hutchings@aaico.com",K,A],["jonathan.assayag@aaico.com",KG,A],["phillip.kingston@aaico.com",K,A],["phillip.kingston@aaico.com",K,A]],[[A],["kris.karcher@aaico.com",K,A],["raed.abusanad@aaico.com",K,A],[K,A],["nabil.mansouri@aaico.com",K,A],["kylee.hutchings@aaico.com",K,A],["kylee.hutchings@aaico.com",K,A],["jonathan.assayag@aaico.com",KG,A],["phillip.kingston@aaico.com",K,A],["phillip.kingston@aaico.com",K,A]],[[A],["ash.sawhney@aaico.com","kris.karcher@aaico.com"],["raed.abusanad@aaico.com"],[K],["nabil.mansouri@aaico.com"],["kylee.hutchings@aaico.com"],["kylee.hutchings@aaico.com"],["jonathan.assayag@aaico.com"],["phillip.kingston@aaico.com"],["phillip.kingston@aaico.com"]],[[A],["ash.sawhney@aaico.com"],["raed.abusanad@aaico.com"],[K],["nabil.mansouri@aaico.com"],["kylee.hutchings@aaico.com"],["kylee.hutchings@aaico.com"],["jonathan.assayag@aaico.com"],["phillip.kingston@aaico.com"],["theo.fagnoni@aaico.com"]],[[A],["ash.sawhney@aaico.com"],["raed.abusanad@aaico.com"],[K],["nabil.mansouri@aaico.com"],["kylee.hutchings@aaico.com"],["kylee.hutchings@aaico.com"],["jonathan.assayag@aaico.com"],["phillip.kingston@aaico.com"],["theo.fagnoni@aaico.com"]],[[A],["ash.sawhney@aaico.com"],["raed.abusanad@aaico.com"],[K],["nabil.mansouri@aaico.com"],["kylee.hutchings@aaico.com"],["kylee.hutchings@aaico.com"],["jonathan.assayag@aaico.com"],["phillip.kingston@aaico.com"],["theo.fagnoni@aaico.com"]],[[A],["ash.sawhney@aaico.com"],["raed.abusanad@aaico.com"],[K],["nabil.mansouri@aaico.com"],["kylee.hutchings@aaico.com"],["kylee.hutchings@aaico.com"],["jonathan.assayag@aaico.com"],["phillip.kingston@aaico.com"],["theo.fagnoni@aaico.com"]],[[A],["ash.sawhney@aaico.com"],["raed.abusanad@aaico.com"],[K],["nabil.mansouri@aaico.com"],["kylee.hutchings@aaico.com"],["kylee.hutchings@aaico.com"],["jonathan.assayag@aaico.com"],["phillip.kingston@aaico.com"],["theo.fagnoni@aaico.com"]],[[A],["ash.sawhney@aaico.com"],["raed.abusanad@aaico.com"],[K],["nabil.mansouri@aaico.com"],["kylee.hutchings@aaico.com"],["kylee.hutchings@aaico.com"],["jonathan.assayag@aaico.com"],["phillip.kingston@aaico.com"],["theo.fagnoni@aaico.com"]],[[A],["ash.sawhney@aaico.com"],["raed.abusanad@aaico.com"],[K],["nabil.mansouri@aaico.com"],["kylee.hutchings@aaico.com"],["kylee.hutchings@aaico.com"],["jonathan.assayag@aaico.com"],["phillip.kingston@aaico.com"],["theo.fagnoni@aaico.com"]]]};})();
+const validMatrix=m=>!!(m&&Array.isArray(m.levels)&&Array.isArray(m.depts)&&Array.isArray(m.cells)&&m.cells.length===m.levels.length);
+const clone=o=>JSON.parse(JSON.stringify(o));
+const nameOf=e=>{const s=String(e||""); if(!s.includes("@")) return s; const p=s.split("@")[0].split(/[._-]/)[0]; return p.charAt(0).toUpperCase()+p.slice(1);};
+function chainFor(m,dept,level){
+  const li=m.levels.findIndex(l=>l.code===level), di=m.depts.indexOf(dept);
+  const emails=(li>=0&&di>=0&&m.cells[li][di])||[]; const n=emails.length;
+  return emails.map((e,i)=>({name:nameOf(e),email:e,role:i===0?"Department head":i===n-1?"Final approver":"Exec approver"}));
+}
+const VIEW_FIXED=[{id:"HR",label:"Talent Acquisition (HR)"},{id:"Hina",label:"Hina, Requester"}];
 function seed(){
-  const t=Date.now();
-  const mk=(o)=>Object.assign({posted:false,declined:false,budget:""},o);
+  const t=Date.now(), M=DEFAULT_MATRIX, d=M.depts;
+  const mk=(o)=>Object.assign({posted:false,declined:false,budget:"",chain:chainFor(M,o.dept,o.level)},o);
   return [
-    mk({id:"REQ-1049",title:"Customer Success Manager",dept:"Delivery & PMO",level:"IC4",emp:"Permanent",rtype:"New role",loc:"Dubai",requester:"Hina",manager:"Hina",jd:"https://docs.google.com/document/d/example-csm",alt:"Yes",
-      just:"Capacity need. Three enterprise accounts go live in Q4 and post go live support currently sits with PMs. Partly billable through the support retainer.",
-      chain:[{name:"Ash",role:"Department head"},{name:"Kylee",role:"Final approver"}],stage:0,
+    mk({id:"REQ-1050",title:"VP of Product",dept:d[7],level:"M6",emp:"Permanent",rtype:"New role",loc:"Dubai",requester:"Jonathan",manager:"Jonathan",jd:"",alt:"Yes",
+      just:"Product org has grown to three squads. Need a VP to own roadmap and pricing across Opus.",stage:1,
+      hist:[{t:t-2*D,who:"Jonathan",a:"submitted"},{t:t-1.6*D,who:"Jonathan",a:"approved"}]}),
+    mk({id:"REQ-1049",title:"Customer Success Manager",dept:d[1],level:"IC4",emp:"Permanent",rtype:"New role",loc:"Dubai",requester:"Hina",manager:"Hina",jd:"https://docs.google.com/document/d/example-csm",alt:"Yes",
+      just:"Capacity need. Three enterprise accounts go live in Q4 and post go live support currently sits with PMs. Partly billable through the support retainer.",stage:0,
       hist:[{t:t-4*H,who:"Hina",a:"submitted"}]}),
-    mk({id:"REQ-1048",title:"Senior Project Manager",dept:"Delivery & PMO",level:"IC5",emp:"Permanent",rtype:"Additional headcount",loc:"Dubai",requester:"Hina",manager:"Hina",jd:"https://docs.google.com/document/d/example-spm",alt:"Yes",
-      just:"Fully billable. New programme signed with a 12 month SOW requiring a dedicated senior PM from November.",
-      chain:[{name:"Ash",role:"Department head"},{name:"Kasra",role:"Exec (IC5+)"},{name:"Kylee",role:"Final approver"}],stage:1,
+    mk({id:"REQ-1048",title:"Head of Project Management",dept:d[1],level:"M4",emp:"Permanent",rtype:"Additional headcount",loc:"Dubai",requester:"Hina",manager:"Ash",jd:"https://docs.google.com/document/d/example-hpm",alt:"Yes",
+      just:"Fully billable. New programme signed with a 12 month SOW requiring a dedicated head of PM from November.",stage:1,
       hist:[{t:t-3*D,who:"Hina",a:"submitted"},{t:t-2.1*D,who:"Ash",a:"approved",note:"Agreed, needed for the new programme."}]}),
-    mk({id:"REQ-1047",title:"Workflow Engineer",dept:"Engineering",level:"IC3",emp:"Permanent",rtype:"Additional headcount",loc:"Remote (UAE)",requester:"Nick",manager:"Head of Engineering",jd:"",alt:"Yes",
-      just:"Capacity need. Backlog of client workflow builds is roughly six weeks. Billable once assigned to delivery pods.",
-      chain:[{name:"Head of Engineering",role:"Department head"},{name:"Kylee",role:"Final approver"}],stage:0,
-      hist:[{t:t-31*H,who:"Nick",a:"submitted",note:"Raised on behalf of Head of Engineering."}]}),
-    mk({id:"REQ-1046",title:"Solution Consultant",dept:"Sales & Growth",level:"IC4",emp:"Permanent",rtype:"Backfill / replacement",loc:"Riyadh",requester:"Head of Growth",manager:"Head of Growth",jd:"https://docs.google.com/document/d/example-sc",alt:"Not applicable",
-      just:"Backfill for a leaver in September. Pre sales coverage for KSA pipeline.",
-      chain:[{name:"Head of Growth",role:"Department head"},{name:"Kylee",role:"Final approver"}],stage:2,
-      hist:[{t:t-6*D,who:"Head of Growth",a:"submitted"},{t:t-5.5*D,who:"Head of Growth",a:"approved"},{t:t-4*D,who:"Kylee",a:"approved"}]}),
-    mk({id:"REQ-1045",title:"Talent Acquisition Partner",dept:"People",level:"IC3",emp:"Fixed-term",rtype:"New role",loc:"Dubai",requester:"Farah",manager:"Head of People",jd:"https://docs.google.com/document/d/example-tap",alt:"Yes",
-      just:"Capacity need while hiring volume doubles. Fixed term for 12 months.",
-      chain:[{name:"Head of People",role:"Department head"},{name:"Kylee",role:"Final approver"}],stage:2,posted:true,
-      hist:[{t:t-14*D,who:"Farah",a:"submitted"},{t:t-13*D,who:"Head of People",a:"approved"},{t:t-11*D,who:"Kylee",a:"approved"},{t:t-10*D,who:"HR",a:"posted"}]}),
-    mk({id:"REQ-1044",title:"Data Analyst Intern",dept:"Operations & Finance",level:"IC1",emp:"Intern",rtype:"New role",loc:"Dubai",requester:"Head of Operations",manager:"Head of Operations",jd:"",alt:"No",
-      just:"Support month end reporting.",
-      chain:[{name:"Head of Operations",role:"Department head"},{name:"Kylee",role:"Final approver"}],stage:1,declined:true,
-      hist:[{t:t-9*D,who:"Head of Operations",a:"submitted"},{t:t-8.6*D,who:"Head of Operations",a:"approved"},{t:t-7*D,who:"Kylee",a:"declined",note:"Let's look at automating the reporting first, then revisit."}]})
+    mk({id:"REQ-1047",title:"Workflow Engineer",dept:d[2],level:"IC3",emp:"Permanent",rtype:"Additional headcount",loc:"Remote (UAE)",requester:"Nick",manager:"Raed",jd:"",alt:"Yes",
+      just:"Capacity need. Backlog of client workflow builds is roughly six weeks. Billable once assigned to delivery pods.",stage:0,
+      hist:[{t:t-31*H,who:"Nick",a:"submitted",note:"Raised on behalf of Raed."}]}),
+    mk({id:"REQ-1046",title:"Solution Consultant",dept:d[4],level:"IC4",emp:"Permanent",rtype:"Backfill / replacement",loc:"Riyadh",requester:"Nabil",manager:"Nabil",jd:"https://docs.google.com/document/d/example-sc",alt:"Not applicable",
+      just:"Backfill for a leaver in September. Pre sales coverage for KSA pipeline.",stage:1,
+      hist:[{t:t-6*D,who:"Nabil",a:"submitted"},{t:t-5.5*D,who:"Nabil",a:"approved"}]}),
+    mk({id:"REQ-1045",title:"Talent Acquisition Partner",dept:d[5],level:"IC3",emp:"Fixed-term",rtype:"New role",loc:"Dubai",requester:"Farah",manager:"Kylee",jd:"https://docs.google.com/document/d/example-tap",alt:"Yes",
+      just:"Capacity need while hiring volume doubles. Fixed term for 12 months.",stage:1,posted:true,
+      hist:[{t:t-14*D,who:"Farah",a:"submitted"},{t:t-13*D,who:"Kylee",a:"approved"},{t:t-10*D,who:"HR",a:"posted"}]}),
+    mk({id:"REQ-1044",title:"Data Analyst Intern",dept:d[6],level:"IC1",emp:"Intern",rtype:"New role",loc:"Dubai",requester:"Farah",manager:"Kylee",jd:"",alt:"No",
+      just:"Support month end reporting.",stage:0,declined:true,
+      hist:[{t:t-9*D,who:"Farah",a:"submitted"},{t:t-7*D,who:"Kylee",a:"declined",note:"Let's look at automating the reporting first, then revisit."}]})
   ];
 }
 if(typeof window==="undefined"){module.exports=seed;return;}
 
 /* ---------- state + data layer ---------- */
-let S={reqs:[],matrix:JSON.parse(JSON.stringify(DEFAULT_MATRIX)),viewer:"HR",view:"dash",filter:"all",q:"",lane:null,loaded:false,openId:null,readOnly:false};
-try{const v=localStorage.getItem("aai-rr-viewer"); if(VIEWERS.some(x=>x.id===v)) S.viewer=v;}catch(e){}
+let S={reqs:[],matrix:clone(DEFAULT_MATRIX),viewer:"HR",view:"dash",filter:"all",q:"",lane:null,loaded:false,openId:null,readOnly:false,
+  draft:null,mx:{src:CONFIG.SHEET_API_URL?"sheet":"demo",status:"idle",err:"",log:[],auth:null,isAdmin:false,signing:false,mobileDept:0}};
+try{const v=localStorage.getItem("aai-rr-viewer"); if(v) S.viewer=v;}catch(e){}
 let DB=null, USER=null, MODE="connecting";
 
 async function initData(){
@@ -438,14 +496,15 @@ async function initData(){
       S.reqs=snap.docs.map(d=>d.data()).filter(Boolean); S.loaded=true; refresh();
     },err=>{toast("Couldn't load requests: "+err.message);});
     DB.doc("config/matrix").onSnapshot(snap=>{
-      if(snap.exists&&snap.data()&&Array.isArray(snap.data().depts)) S.matrix=snap.data(); refresh();
+      if(S.mx.src==="demo"&&snap.exists&&validMatrix(snap.data())){S.matrix=snap.data(); if(Array.isArray(S.matrix.log)) S.mx.log=S.matrix.log;} refresh();
     },()=>{});
   }else{
     MODE="local";
-    try{const raw=localStorage.getItem("aai-rr-local"); const p=raw&&JSON.parse(raw); if(p&&p.reqs){S.reqs=p.reqs; S.matrix=p.matrix||S.matrix;} else S.reqs=seed();}catch(e){S.reqs=seed();}
+    try{const raw=localStorage.getItem("aai-rr-local"); const p=raw&&JSON.parse(raw); if(p&&p.reqs){S.reqs=p.reqs; if(S.mx.src==="demo"&&validMatrix(p.matrix)){S.matrix=p.matrix; S.mx.log=p.matrix.log||[];}} else S.reqs=seed();}catch(e){S.reqs=seed();}
     S.loaded=true; $("#reset").hidden=false; render();
   }
   renderConn();
+  if(S.mx.src==="sheet") loadSheetMatrix();
 }
 function saveLocal(){ if(MODE!=="local") return; try{localStorage.setItem("aai-rr-local",JSON.stringify({reqs:S.reqs,matrix:S.matrix}))}catch(e){} }
 function writeErr(e){
@@ -497,25 +556,15 @@ function laneOf(r){const s=status(r);
   if(s.k==="approved") return 3; if(s.k==="posted") return 4; return -1;}
 function visible(){
   const v=S.viewer;
-  if(v==="HR"||v==="Kylee") return S.reqs;
-  if(v==="Hina") return S.reqs.filter(r=>r.requester==="Hina");
-  if(v==="Kasra") return S.reqs.filter(r=>r.chain.some(c=>c.name==="Kasra"));
-  const depts=S.matrix.depts.filter(d=>d.head===v).map(d=>d.name);
-  return S.reqs.filter(r=>depts.includes(r.dept));
+  if(v==="HR") return S.reqs;
+  return S.reqs.filter(r=>r.requester===v||r.chain.some(c=>c.name===v));
 }
 function queue(){
   if(S.viewer==="HR") return S.reqs.filter(r=>status(r).k==="approved");
   if(S.viewer==="Hina") return [];
   return S.reqs.filter(r=>status(r).who===S.viewer);
 }
-function routeFor(dept,level){
-  const d=S.matrix.depts.find(x=>x.name===dept); const chain=[];
-  if(d) chain.push({name:d.head,role:"Department head"});
-  const n=parseInt(String(level).replace(/\D/g,""),10);
-  if(n>=S.matrix.execFrom && S.matrix.exec) chain.push({name:S.matrix.exec,role:"Exec (IC"+S.matrix.execFrom+"+)"});
-  chain.push({name:S.matrix.final,role:"Final approver"});
-  return chain;
-}
+function routeFor(dept,level){ return chainFor(S.matrix,dept,level); }
 function nextId(){const m=S.reqs.reduce((a,r)=>Math.max(a,parseInt(r.id.replace(/\D/g,""),10)||0),1049); return "REQ-"+(m+1);}
 
 
@@ -568,16 +617,23 @@ function renderChrome(){
   const q=queue().length, c=$("#apprCount"); c.hidden=!q; c.textContent=q;
   const ql=S.viewer==="HR"?"Ready to post":"My approvals"; $("#apprLabel").textContent=ql;
   const vSel=$("#viewer");
-  if(!vSel.options.length) vSel.innerHTML=VIEWERS.map(v=>`<option value="${v.id}">${esc(v.label)}</option>`).join("");
+  const vs=viewers(), opts=vs.map(v=>`<option value="${esc(v.id)}">${esc(v.label)}</option>`).join("");
+  if(vSel.dataset.k!==opts){vSel.innerHTML=opts; vSel.dataset.k=opts;}
+  if(!vs.some(v=>v.id===S.viewer)) S.viewer="HR";
   vSel.value=S.viewer;
   $("#crumb").textContent=S.view==="appr"?ql:TITLES[S.view];
   $("#mnav").innerHTML=[["dash","Overview"],["appr",ql+(q?" ("+q+")":"")],["new","Raise a role"],["matrix","Matrix"]].map(([k,l])=>`<button data-go="${k}" class="${S.view===k?"on":""}">${l}</button>`).join("");
   renderConn();
 }
-function setViewer(v){S.viewer=v;S.lane=null;try{localStorage.setItem("aai-rr-viewer",v)}catch(e){} closeDrawer(); render();toast("Viewing as "+VIEWERS.find(x=>x.id===v).label);}
+function setViewer(v){S.viewer=v;S.lane=null;try{localStorage.setItem("aai-rr-viewer",v)}catch(e){} closeDrawer(); render();toast("Viewing as "+((viewers().find(x=>x.id===v)||{}).label||v));}
+function viewers(){
+  const seen=new Map();
+  S.matrix.cells.forEach(row=>row.forEach(ch=>ch.forEach(e=>{const n=nameOf(e); if(!seen.has(n)) seen.set(n,e);})));
+  return VIEW_FIXED.concat([...seen.keys()].sort().map(n=>({id:n,label:n+", Approver"})));
+}
 
 /* ---------- overview ---------- */
-const LANES=[["Department head","With dept head"],["Exec approval","IC5 and above"],["Final approval","Final sign off"],["Ready to post","Approved"],["Live in HiBob","Completed"]];
+const LANES=[["Department head","With dept head"],["Exec approval","Senior roles"],["Final approval","Final sign off"],["Ready to post","Approved"],["Live in HiBob","Completed"]];
 function dash(){
   const all=visible();
   const open=all.filter(r=>["pending","approved"].includes(status(r).k));
@@ -593,7 +649,7 @@ function dash(){
   if(S.filter==="stuck") rows=rows.filter(isStuck); else if(S.filter!=="all") rows=rows.filter(r=>status(r).k===S.filter);
   if(S.q){const q=S.q.toLowerCase(); rows=rows.filter(r=>(r.title+r.id+r.dept+r.requester).toLowerCase().includes(q));}
   const byDept={}; all.forEach(r=>byDept[r.dept]=(byDept[r.dept]||0)+1); const maxD=Math.max(1,...Object.values(byDept));
-  const sub={HR:"Every role request across the company, from first ask to live in HiBob.",Kylee:"All requests across the company.",Hina:"The roles you've raised and where each one is.",Kasra:"Senior role requests that route through you."}[S.viewer]||"Requests for the departments you lead.";
+  const sub={HR:"Every role request across the company, from first ask to live in HiBob.",Hina:"The roles you've raised and where each one is."}[S.viewer]||"Requests you raised or that route through you.";
   return `
   <div class="pagehead"><div><h1>Overview</h1><p>${sub}</p></div><div class="grow"></div><button class="btn btn-primary" data-go="new">${ic("plus")}Raise a role</button></div>
   <div class="kpis">
@@ -654,7 +710,7 @@ function activity(list){
 /* ---------- raise a role ---------- */
 const REQ_FIELDS=[["dept","Department"],["requester","Your name"],["manager","Hiring manager"],["title","Job title"],["loc","Location"],["level","Level"],["just","Business justification"]];
 function form(){
-  const me=["HR","Ash","Kasra","Kylee"].includes(S.viewer)?"":S.viewer;
+  const me=S.viewer==="HR"?"":S.viewer;
   const F=(id,label,ctrl,opts={})=>`<div class="f ${opts.full?"full":""}"><label for="${id}">${label}${opts.opt?' <span class="opt">Optional</span>':' <span class="req">*</span>'}${opts.extra||""}</label>${ctrl}${opts.hint?`<span class="hint">${opts.hint}</span>`:""}<span class="errmsg">This field is required</span></div>`;
   const R=(name,vals)=>`<div class="opts">${vals.map((v,i)=>`<input type="radio" name="${name}" id="${name}${i}" value="${v}" ${i===0?"checked":""}><label for="${name}${i}">${v}</label>`).join("")}</div>`;
   return `
@@ -663,7 +719,7 @@ function form(){
   <form class="card" id="reqForm" novalidate>
     <div class="fsec"><h3>Requester</h3><p>Who is asking, and who the new hire will report to.</p>
       <div class="fields">
-        ${F("dept","Department",`<select id="dept" required><option value="">Select department</option>${S.matrix.depts.map(x=>`<option>${esc(x.name)}</option>`).join("")}</select>`,{hint:"Sets the approval route automatically."})}
+        ${F("dept","Department",`<select id="dept" required><option value="">Select department</option>${S.matrix.depts.map(x=>`<option>${esc(x)}</option>`).join("")}</select>`,{hint:"Sets the approval route automatically."})}
         ${F("requester","Your name",`<input id="requester" required value="${esc(me)}" placeholder="Full name">`)}
         ${F("manager","Hiring manager",`<input id="manager" required placeholder="Who will this person report to?">`,{full:true,hint:"Can differ from you if you're raising this on someone's behalf."})}
       </div></div>
@@ -671,7 +727,7 @@ function form(){
       <div class="fields">
         ${F("title","Job title",`<input id="title" required placeholder="e.g. Senior Project Manager">`)}
         ${F("loc","Location",`<input id="loc" required placeholder="e.g. Dubai">`)}
-        ${F("level","Level",`<select id="level" required><option value="">Select level</option>${LEVELS.map(l=>`<option>${l}</option>`).join("")}</select>`,{hint:"From the IC framework. IC5 and above adds an exec approver."})}
+        ${F("level","Level",`<select id="level" required><option value="">Select level</option>${S.matrix.levels.map(l=>`<option value="${esc(l.code)}">${esc(l.code)}, ${esc(l.title)}</option>`).join("")}</select>`,{hint:"Senior levels add more approvers, as set in the approval matrix."})}
         <div class="f"><span class="lab">Employment type <span class="req">*</span></span>${R("emp",["Permanent","Fixed-term","Intern"])}</div>
         <div class="f full"><span class="lab">Role type <span class="req">*</span></span>${R("rtype",["New role","Additional headcount","Backfill / replacement"])}</div>
       </div></div>
@@ -725,7 +781,7 @@ function approvals(){
   const title=isHR?"Ready to post":"My approvals";
   const sub=isHR?"Fully approved roles that need creating in HiBob.":"Requests waiting on your decision, oldest first.";
   const head=`<div class="pagehead"><div><h1>${title}</h1><p>${sub}</p></div></div>`;
-  if(S.viewer==="Hina") return head+`<div class="card empty"><div class="ic">${ic("user")}</div><b>Requesters don't approve roles</b>Switch the demo view to Ash, Kasra or Kylee to see an approver's queue.</div>`;
+  if(S.viewer==="Hina") return head+`<div class="card empty"><div class="ic">${ic("user")}</div><b>Requesters don't approve roles</b>Switch the demo view to an approver, such as Ash or Kasra, to see their queue.</div>`;
   if(!q.length) return head+`<div class="card empty"><div class="ic">${ic("check")}</div><b>You're all caught up</b>${isHR?"No approved roles are waiting to be posted.":"Nothing is waiting on your approval."}</div>`;
   return head+`<div class="card qlist">${q.sort((a,b)=>lastT(a)-lastT(b)).map(r=>`<div class="qrow">
     <div>
@@ -737,19 +793,287 @@ function approvals(){
   </div>`).join("")}</div>`;
 }
 
-/* ---------- matrix ---------- */
+/* ---------- approval matrix: data quality, editing, sync ---------- */
+const TRACKS=["Executive","Management","Individual Contributor"];
+const EMAIL_RE=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const cur=()=>S.draft||S.matrix;
+function canEditMatrix(){
+  if(S.mx.src==="sheet") return !!(S.mx.auth&&S.mx.isAdmin);
+  return S.viewer==="HR"&&!S.readOnly;
+}
+function people(m){const s=new Set(); m.cells.forEach(r=>r.forEach(ch=>ch.forEach(e=>s.add(e)))); return [...s].sort();}
+function emailProblem(e){
+  if(!EMAIL_RE.test(e)) return "is not a valid email";
+  if(e.split("@")[1].toLowerCase()!==CONFIG.DOMAIN) return "is not an @"+CONFIG.DOMAIN+" address";
+  return "";
+}
+function issues(m){
+  const out=[];
+  const dl=new Set(), dd=new Set();
+  m.levels.forEach((l,r)=>{const k=String(l.code).trim().toUpperCase(); if(!k) out.push({r,c:-1,msg:"A level is missing its code"}); else if(dl.has(k)) out.push({r,c:-1,msg:"Level "+k+" appears twice"}); dl.add(k);});
+  m.depts.forEach((d,c)=>{const k=String(d).trim().toLowerCase(); if(!k) out.push({r:-1,c,msg:"A department is missing its name"}); else if(dd.has(k)) out.push({r:-1,c,msg:d+" appears twice"}); dd.add(k);});
+  m.cells.forEach((row,r)=>row.forEach((ch,c)=>{
+    const where=m.levels[r].code+" / "+m.depts[c];
+    if(!ch.length) out.push({r,c,msg:where+": no approver"});
+    ch.forEach(e=>{const p=emailProblem(e); if(p) out.push({r,c,msg:where+": "+e+" "+p});});
+    if(new Set(ch).size!==ch.length) out.push({r,c,msg:where+": the same person appears twice"});
+  }));
+  return out;
+}
+/* draft bookkeeping: remember where each draft row/column came from so changes can be described */
+function startEdit(){
+  S.draft=clone(S.matrix); delete S.draft.log;
+  S.dmeta={levelOrig:S.matrix.levels.map(l=>l.code),deptOrig:S.matrix.depts.slice(),ops:[]};
+  render();
+}
+function discardEdit(){S.draft=null;S.dmeta=null;closeDrawer();render();toast("Changes discarded");}
+const short=ch=>ch.length?ch.map(nameOf).join(" > "):"nobody";
+function origCell(r,c){
+  const lo=S.dmeta.levelOrig[r], dO=S.dmeta.deptOrig[c]; if(lo==null||dO==null) return null;
+  const li=S.matrix.levels.findIndex(l=>l.code===lo), di=S.matrix.depts.indexOf(dO);
+  return li<0||di<0?null:S.matrix.cells[li][di];
+}
+function cellChanged(r,c){
+  if(!S.draft) return false; const o=origCell(r,c);
+  return !o||o.join()!==S.draft.cells[r][c].join();
+}
+function changeList(){
+  if(!S.draft) return [];
+  const out=S.dmeta.ops.slice();
+  S.draft.cells.forEach((row,r)=>row.forEach((ch,c)=>{
+    const o=origCell(r,c); if(!o) return;
+    if(o.join()!==ch.join()){const sameNames=short(o)===short(ch); out.push(`${S.draft.levels[r].code} / ${S.draft.depts[c]}: ${sameNames?o.join(", "):short(o)} changed to ${sameNames?ch.join(", "):short(ch)}`);}
+  }));
+  S.draft.levels.forEach((l,r)=>{const lo=S.dmeta.levelOrig[r]; if(lo==null) return; const o=S.matrix.levels.find(x=>x.code===lo);
+    if(o&&(o.title!==l.title||o.track!==l.track)&&!out.some(x=>x.startsWith("Level "+lo))) out.push(`Level ${l.code}: details updated to ${l.title}, ${l.track}`);});
+  return out;
+}
+
+/* ---------- Google Sheet sync ---------- */
+async function loadSheetMatrix(quiet){
+  S.mx.status="loading"; S.mx.err=""; if(S.view==="matrix") render();
+  try{
+    const res=await fetch(CONFIG.SHEET_API_URL,{method:"GET"}); const j=await res.json();
+    if(!j.ok||!validMatrix(j.matrix)) throw new Error(j.message||j.error||"Unexpected response");
+    S.matrix=j.matrix; S.mx.status="ok"; S.mx.syncedAt=Date.now();
+    if(!quiet) refresh();
+  }catch(e){S.mx.status="error"; S.mx.err=String(e.message||e); refresh();}
+}
+async function sheetApi(body){
+  const res=await fetch(CONFIG.SHEET_API_URL,{method:"POST",body:JSON.stringify(body)});
+  return res.json();
+}
+let gsiLoading=false;
+function ensureGsi(){
+  if(!CONFIG.GOOGLE_CLIENT_ID||S.mx.src!=="sheet") return;
+  if(window.google&&google.accounts&&google.accounts.id){ drawGsiButton(); return; }
+  if(gsiLoading) return; gsiLoading=true;
+  const sc=document.createElement("script"); sc.src="https://accounts.google.com/gsi/client"; sc.async=true;
+  sc.onload=()=>{google.accounts.id.initialize({client_id:CONFIG.GOOGLE_CLIENT_ID,callback:onCredential,hd:CONFIG.DOMAIN,auto_select:true}); drawGsiButton();};
+  sc.onerror=()=>{gsiLoading=false; toast("Couldn't load Google sign in.");};
+  document.head.appendChild(sc);
+}
+function drawGsiButton(){const el=$("#gsiBtn"); if(el&&window.google&&!el.childElementCount) google.accounts.id.renderButton(el,{theme:"outline",size:"medium",text:"signin_with",shape:"rectangular"});}
+async function onCredential(resp){
+  const token=resp.credential; let email="";
+  try{email=JSON.parse(atob(token.split(".")[1].replace(/-/g,"+").replace(/_/g,"/"))).email||"";}catch(e){}
+  S.mx.auth={token,email}; S.mx.signing=true; render();
+  try{
+    const j=await sheetApi({action:"whoami",idToken:token});
+    if(!j.ok) throw new Error(j.message||j.error);
+    S.mx.auth.email=j.email; S.mx.isAdmin=!!j.isAdmin;
+    toast(j.isAdmin?"Signed in. You can edit the approval matrix.":"Signed in. You have view-only access to the matrix.");
+    loadMatrixLog();
+  }catch(e){S.mx.auth=null; S.mx.isAdmin=false; toast("Sign in failed: "+(e.message||e));}
+  S.mx.signing=false; render();
+}
+function signOut(){ if(S.draft) discardEdit(); S.mx.auth=null; S.mx.isAdmin=false; S.mx.log=[]; try{google.accounts.id.disableAutoSelect();}catch(e){} render(); }
+async function loadMatrixLog(){
+  if(S.mx.src!=="sheet"||!S.mx.auth) return;
+  try{const j=await sheetApi({action:"log",idToken:S.mx.auth.token}); if(j.ok){S.mx.log=j.log; if(S.view==="matrix") render();}}catch(e){}
+}
+async function publish(){
+  const m=S.draft, list=changeList();
+  if(!list.length){toast("Nothing to publish.");return;}
+  if(issues(m).length){toast("Fix the highlighted issues before publishing.");return;}
+  const clean={levels:m.levels,depts:m.depts,cells:m.cells};
+  if(S.mx.src==="sheet"){
+    S.mx.status="saving"; renderPanel();
+    let j; try{ j=await sheetApi({action:"save",idToken:S.mx.auth.token,baseVersion:S.matrix.version,matrix:clean,summary:list}); }
+    catch(e){ j={ok:false,error:"network",message:String(e.message||e)}; }
+    S.mx.status="ok";
+    if(!j.ok){
+      if(j.error==="conflict"){S.mx.conflict=j.matrix; S.mx.status="conflict"; renderPanel(); render(); return;}
+      if(j.error==="unauthenticated"){S.mx.auth=null; S.mx.isAdmin=false; closeDrawer(); render(); toast("Your sign in expired. Sign in again, your edits are kept."); return;}
+      toast("Couldn't publish: "+(j.problems?j.problems.slice(0,2).join("; "):(j.message||j.error))); renderPanel(); return;
+    }
+    S.matrix=j.matrix; S.mx.syncedAt=Date.now(); loadMatrixLog();
+  }else{
+    S.mx.log=[{when:new Date().toISOString(),who:S.viewer==="HR"?"Talent Acquisition (HR)":S.viewer,changes:list.join("\n")}].concat(S.mx.log).slice(0,50);
+    S.matrix=Object.assign(clean,{log:S.mx.log}); saveMatrix();
+  }
+  S.draft=null; S.dmeta=null; closeDrawer(); render();
+  toast(`Published ${list.length} change${list.length>1?"s":""}${S.mx.src==="sheet"?" to the Google Sheet":""}.`);
+}
+function takeLatest(){ S.matrix=S.mx.conflict; S.mx.conflict=null; S.mx.status="ok"; S.mx.syncedAt=Date.now(); S.draft=null; S.dmeta=null; closeDrawer(); render(); toast("Loaded the latest version from the sheet."); }
+
+/* ---------- matrix page ---------- */
+function apList(ch){
+  if(!ch.length) return `<span class="ap none">No approver</span>`;
+  return `<ol class="aps">${ch.map(e=>`<li title="${esc(e)}">${avatar(nameOf(e),"xs")}<span>${esc(nameOf(e))}</span>${emailProblem(e)?`<em class="flag">${ic("alert")}</em>`:""}</li>`).join("")}</ol>`;
+}
+function srcBar(){
+  const m=S.mx;
+  if(m.src==="demo"){
+    return `<div class="srcbar card"><span class="dot"></span><div class="grow"><b>Demo mode.</b> Loaded from a snapshot of HR's Google Sheet. Edits are saved in this portal only. ${S.viewer!=="HR"?"Switch the view to Talent Acquisition (HR) to edit.":""}</div><a class="btn btn-ghost btn-sm" href="${esc(CONFIG.SHEET_URL)}" target="_blank" rel="noopener">${ic("ext")}Open sheet</a></div>`;
+  }
+  const st=m.status==="loading"?"Loading from Google Sheet":m.status==="error"?`Couldn't reach the sheet (${esc(m.err)}). Showing the last known snapshot.`:m.syncedAt?`Synced with Google Sheet ${rel(m.syncedAt)}`:"Google Sheet";
+  const who=m.signing?`<span class="r-sub">Checking access</span>`
+    :m.auth?`<span class="r-sub">${esc(m.auth.email)}${m.isAdmin?", HR admin":", view only"}</span><button class="btn btn-ghost btn-sm" data-mx="signout">Sign out</button>`
+    :CONFIG.GOOGLE_CLIENT_ID?`<span class="r-sub">HR admins sign in to edit</span><div id="gsiBtn"></div>`:`<span class="r-sub">Editing needs GOOGLE_CLIENT_ID in the portal config</span>`;
+  return `<div class="srcbar card ${m.status==="error"?"err":"live"}"><span class="dot"></span><div class="grow"><b>Source of truth: Google Sheet.</b> ${st}</div>
+    <button class="btn btn-ghost btn-sm" data-mx="reload" ${S.draft?"disabled":""}>Reload</button><a class="btn btn-ghost btn-sm" href="${esc(CONFIG.SHEET_URL)}" target="_blank" rel="noopener">${ic("ext")}Open sheet</a><span class="sep"></span>${who}</div>`;
+}
 function matrix(){
-  const m=S.matrix, dis=S.readOnly?"disabled":"";
-  return `<div class="pagehead"><div><h1>Approval matrix</h1><p>Who approves what. Changes apply to new requests immediately, for everyone.</p></div></div>
-  <div class="callout" style="margin-bottom:16px">${ic("info")}<span>These department heads are placeholders until HR shares the final matrix.</span></div>
-  <div class="card"><div class="tablewrap"><table class="mx"><thead><tr><th>Department</th><th>Step 1: Department head</th><th>Step 2: Senior roles</th><th>Final step</th></tr></thead><tbody>
-    ${m.depts.map((d,i)=>`<tr style="cursor:default"><td><b>${esc(d.name)}</b></td><td><input data-head="${i}" value="${esc(d.head)}" aria-label="Head of ${esc(d.name)}" ${dis}></td><td><span class="r-sub">${esc(m.exec)}, IC${m.execFrom} and above</span></td><td><div class="who">${avatar(m.final,"sm")}<span>${esc(m.final)}</span></div></td></tr>`).join("")}
-  </tbody></table></div></div>
-  <div class="rules">
-    <div class="card rule"><b>Senior role approver</b><p>Adds an extra approval step for senior hires.</p><div class="ctl">Level <select id="execFrom" aria-label="Level threshold" ${dis}>${LEVELS.map((l,i)=>`<option value="${i+1}" ${i+1==m.execFrom?"selected":""}>${l}</option>`).join("")}</select> and above goes to <input id="execName" value="${esc(m.exec)}" style="width:120px" aria-label="Exec approver" ${dis}></div></div>
-    <div class="card rule"><b>Final approver</b><p>Every request ends with this person.</p><div class="ctl"><input id="finalName" value="${esc(m.final)}" style="width:160px" aria-label="Final approver" ${dis}></div></div>
-    <div class="card rule"><b>Reminders</b><p>Keeps requests moving without chasing.</p><div class="ctl">After 24 hours, then daily until a decision.</div></div>
-  </div>`;
+  const m=cur(), ed=!!S.draft, can=canEditMatrix(), iss=issues(m);
+  const bad=new Set(iss.filter(i=>i.r>=0&&i.c>=0).map(i=>i.r+":"+i.c));
+  const n=ed?changeList().length:0;
+  const head=`<div class="pagehead"><div><h1>Approval matrix</h1><p>Who approves a new role, by level and department. Each request goes to the people in a cell, top to bottom.</p></div><div class="grow"></div>
+    ${ed?"":can?`<button class="btn btn-primary" data-mx="edit">${ic("route")}Edit matrix</button>`:""}</div>`;
+  const bar=ed?`<div class="editbar card"><b>${n?`${n} unpublished change${n>1?"s":""}`:"Editing. No changes yet"}</b><span class="r-sub">Click any cell, level or department to change it.</span><div class="grow"></div>
+    <button class="btn btn-secondary btn-sm" data-mx="addlevel">${ic("plus")}Level</button><button class="btn btn-secondary btn-sm" data-mx="adddept">${ic("plus")}Department</button>
+    <button class="btn btn-ghost btn-sm" data-mx="discard">Discard</button><button class="btn btn-primary btn-sm" data-mx="review" ${n?"":"disabled"}>Review and publish</button></div>`:"";
+  const issBox=iss.length?`<div class="card issues"><div class="card-h">${ic("alert")}<h2>${iss.length} issue${iss.length>1?"s":""} to fix${ed?" before publishing":""}</h2></div><ul>${iss.slice(0,8).map(i=>`<li>${ed&&i.r>=0&&i.c>=0?`<button class="linkbtn" data-mx="cell" data-r="${i.r}" data-c="${i.c}">${esc(i.msg)}</button>`:esc(i.msg)}</li>`).join("")}${iss.length>8?`<li class="r-sub">and ${iss.length-8} more, highlighted in the grid</li>`:""}</ul></div>`:"";
+  const th=m.depts.map((d,c)=>{const chg=ed&&S.dmeta.deptOrig[c]!==d; return `<th class="${chg?"chg":""}">${ed?`<button class="hbtn" data-mx="dept" data-c="${c}" title="Edit department">${esc(d)}</button>`:`<span title="${esc(d)}">${esc(d)}</span>`}</th>`;}).join("");
+  const rows=m.levels.map((l,r)=>{
+    const lchg=ed&&S.dmeta.levelOrig[r]!==l.code;
+    const lab=`<b>${esc(l.code)}</b><span>${esc(l.title)}</span><small>${esc(l.track)}</small>`;
+    return `<tr><th scope="row" class="lv ${lchg?"chg":""}">${ed?`<button class="hbtn lvb" data-mx="level" data-r="${r}">${lab}</button>`:`<div class="lvb">${lab}</div>`}</th>
+      ${m.cells[r].map((ch,c)=>{const cls=[bad.has(r+":"+c)?"bad":"",cellChanged(r,c)?"chg":""].join(" ");
+        return `<td class="${cls}">${ed?`<button class="cellbtn" data-mx="cell" data-r="${r}" data-c="${c}" aria-label="Edit ${esc(l.code)} ${esc(m.depts[c])}">${apList(ch)}</button>`:apList(ch)}</td>`;}).join("")}</tr>`;}).join("");
+  const grid=`<div class="card mxcard"><div class="tablewrap"><table class="mxg"><thead><tr><th class="lv">Level</th>${th}</tr></thead><tbody>${rows}</tbody></table></div>
+    <div class="mxfoot r-sub">${ic("info")}Changes apply to new requests. Requests already in approval keep the route they started with.</div></div>`;
+  const log=(S.mx.log||[]).length?`<div class="card" style="margin-top:16px"><div class="card-h"><h2>Change history</h2><div class="grow"></div><span class="meta">${S.mx.src==="sheet"?"From the Matrix Change Log tab":"This portal"}</span></div><ul class="mxlog">${S.mx.log.slice(0,10).map(x=>`<li><div><b>${esc(x.who)}</b><small>${fmt(new Date(x.when).getTime())}</small></div><pre>${esc(x.changes)}</pre></li>`).join("")}</ul></div>`:"";
+  return head+srcBar()+bar+issBox+grid+log;
+}
+
+/* ---------- side panel editors ---------- */
+function openPanel(p){S.openId=null; S.mxPanel=p; renderPanel(); $("#drawer").classList.add("on"); $("#scrim").classList.add("on");}
+function panelShell(kicker,title,sub,body,foot){
+  return `<div class="dh"><div class="row1"><span class="id">${esc(kicker)}</span><div class="grow"></div><button class="iconbtn" id="closeD" aria-label="Close">${ic("x")}</button></div><h2>${esc(title)}</h2>${sub?`<div class="r-sub">${esc(sub)}</div>`:""}</div>
+  <div class="db">${body}</div><div class="act"><div class="row">${foot}</div></div>`;
+}
+function renderPanel(){
+  const p=S.mxPanel, el=$("#drawer"); if(!p) return; const m=S.draft||S.matrix;
+  if(p.kind==="cell"){
+    const l=m.levels[p.r], d=m.depts[p.c];
+    const rowsH=p.chain.map((e,i)=>{const prob=e?emailProblem(e):"Enter an email";
+      return `<div class="aprow"><span class="stepn">${i+1}</span><div class="grow"><input data-ap="${i}" list="mxPeople" value="${esc(e)}" placeholder="name@${esc(CONFIG.DOMAIN)}" aria-label="Approver ${i+1} email" autocomplete="off">
+      <div class="aphint ${prob?"bad":""}" id="aph${i}">${prob?esc(prob):esc(nameOf(e))+(i===0?", department head":i===p.chain.length-1&&p.chain.length>1?", final approver":"")}</div></div>
+      <button class="iconbtn" data-mx="apup" data-i="${i}" ${i===0?"disabled":""} aria-label="Move up">${ic("chev","up")}</button><button class="iconbtn" data-mx="apdown" data-i="${i}" ${i===p.chain.length-1?"disabled":""} aria-label="Move down">${ic("chev","down")}</button><button class="iconbtn" data-mx="aprm" data-i="${i}" aria-label="Remove">${ic("x")}</button></div>`;}).join("");
+    const lvOpts=m.levels.map((x,i)=>i===p.r?"":`<label class="ck2"><input type="checkbox" data-also="l" value="${i}" ${p.alsoL.includes(i)?"checked":""}>${esc(x.code)} <span class="r-sub">${esc(x.title)}</span></label>`).join("");
+    const dOpts=m.depts.map((x,i)=>i===p.c?"":`<label class="ck2"><input type="checkbox" data-also="d" value="${i}" ${p.alsoD.includes(i)?"checked":""}>${esc(x)}</label>`).join("");
+    el.innerHTML=panelShell("Approval chain",`${l.code}, ${l.title}`,d,
+      `<div class="sec"><h4>APPROVERS, IN ORDER</h4><div class="aplist">${rowsH||`<div class="callout">${ic("info")}<span>No approvers yet. Every cell needs at least one.</span></div>`}</div>
+        <button class="btn btn-secondary btn-sm" data-mx="apadd" style="margin-top:10px">${ic("plus")}Add approver</button>
+        <datalist id="mxPeople">${people(m).map(e=>`<option value="${esc(e)}">`).join("")}</datalist></div>
+      <div class="sec"><h4>ALSO APPLY THIS CHAIN TO</h4><details ${p.alsoL.length?"open":""}><summary>Other levels in ${esc(d)}</summary><div class="ckgrid">${lvOpts}</div></details>
+        <details ${p.alsoD.length?"open":""}><summary>Other departments at ${esc(l.code)}</summary><div class="ckgrid">${dOpts}</div></details></div>`,
+      `<button class="btn btn-ghost" data-mx="close">Cancel</button><div class="grow"></div><button class="btn btn-primary" data-mx="cellok">Apply${(p.alsoL.length+p.alsoD.length)?` to ${1+p.alsoL.length+p.alsoD.length} cells`:""}</button>`);
+  }
+  if(p.kind==="dept"){
+    const isNew=p.c<0;
+    el.innerHTML=panelShell(isNew?"New department":"Department",isNew?"Add a department":m.depts[p.c],isNew?"Adds a column to the matrix.":"",
+      `<div class="f"><label for="pName">Department name</label><input id="pName" value="${esc(p.name)}" placeholder="e.g. Customer Success"></div>
+      ${isNew?`<div class="f"><label for="pCopy">Start with approvers from</label><select id="pCopy"><option value="-1">Nobody, I'll fill each level</option>${m.depts.map((x,i)=>`<option value="${i}" ${p.copy===i?"selected":""}>${esc(x)}</option>`).join("")}</select></div>`
+      :`<div class="f"><span class="lab">Position</span><div class="row-btns"><button class="btn btn-secondary btn-sm" data-mx="dleft" ${p.c===0?"disabled":""}>Move left</button><button class="btn btn-secondary btn-sm" data-mx="dright" ${p.c===m.depts.length-1?"disabled":""}>Move right</button></div></div>
+       <div class="f"><span class="lab">Remove</span><div class="hint">Deleting removes this column from the matrix and the Raise a role form. Open requests are not affected.</div><div><button class="btn btn-danger btn-sm" data-mx="ddel">${p.confirm?"Click again to delete":"Delete department"}</button></div></div>`}`,
+      `<button class="btn btn-ghost" data-mx="close">Cancel</button><div class="grow"></div><button class="btn btn-primary" data-mx="deptok">${isNew?"Add department":"Save"}</button>`);
+  }
+  if(p.kind==="level"){
+    const isNew=p.r<0;
+    el.innerHTML=panelShell(isNew?"New level":"Level",isNew?"Add a level":`${m.levels[p.r].code}, ${m.levels[p.r].title}`,isNew?"Adds a row to the matrix.":"",
+      `<div class="fields"><div class="f"><label for="pCode">Level code</label><input id="pCode" value="${esc(p.code)}" placeholder="e.g. IC6"></div>
+      <div class="f"><label for="pTitle">Level title</label><input id="pTitle" value="${esc(p.title)}" placeholder="e.g. Distinguished"></div>
+      <div class="f"><label for="pTrack">Track</label><input id="pTrack" list="mxTracks" value="${esc(p.track)}"><datalist id="mxTracks">${TRACKS.map(t=>`<option value="${t}">`).join("")}</datalist></div>
+      ${isNew?`<div class="f"><label for="pPos">Place above</label><select id="pPos">${m.levels.map((x,i)=>`<option value="${i}" ${p.pos===i?"selected":""}>${esc(x.code)}, ${esc(x.title)}</option>`).join("")}<option value="${m.levels.length}" ${p.pos===m.levels.length?"selected":""}>At the bottom</option></select></div>
+        <div class="f"><label for="pCopy">Copy approvers from</label><select id="pCopy"><option value="-1">Nobody, I'll fill each department</option>${m.levels.map((x,i)=>`<option value="${i}" ${p.copy===i?"selected":""}>${esc(x.code)}, ${esc(x.title)}</option>`).join("")}</select></div>`:""}</div>
+      ${isNew?"":`<div class="f"><span class="lab">Position</span><div class="row-btns"><button class="btn btn-secondary btn-sm" data-mx="lup" ${p.r===0?"disabled":""}>Move up</button><button class="btn btn-secondary btn-sm" data-mx="ldown" ${p.r===m.levels.length-1?"disabled":""}>Move down</button></div></div>
+       <div class="f"><span class="lab">Remove</span><div class="hint">Deleting removes this level from the matrix and the Raise a role form.</div><div><button class="btn btn-danger btn-sm" data-mx="ldel">${p.confirm?"Click again to delete":"Delete level"}</button></div></div>`}`,
+      `<button class="btn btn-ghost" data-mx="close">Cancel</button><div class="grow"></div><button class="btn btn-primary" data-mx="levelok">${isNew?"Add level":"Save"}</button>`);
+  }
+  if(p.kind==="review"){
+    const list=changeList(), iss=issues(m), conflict=S.mx.status==="conflict";
+    el.innerHTML=panelShell("Publish",`${list.length} change${list.length===1?"":"s"} ready`,S.mx.src==="sheet"?"These will be written to the Google Sheet and logged with your name.":"These will be saved to the portal's matrix.",
+      `${conflict?`<div class="callout warn">${ic("alert")}<span>Someone changed the Google Sheet after you started editing. Load the latest version, then make your changes again.</span></div>`:""}
+       ${iss.length?`<div class="callout warn">${ic("alert")}<span>${iss.length} issue${iss.length>1?"s":""} must be fixed first: ${esc(iss.slice(0,3).map(i=>i.msg).join("; "))}${iss.length>3?" and more":""}.</span></div>`:""}
+       <ul class="chglist">${list.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`,
+      conflict?`<button class="btn btn-ghost" data-mx="close">Back to editing</button><div class="grow"></div><button class="btn btn-primary" data-mx="latest">Load latest version</button>`
+      :`<button class="btn btn-ghost" data-mx="close">Back to editing</button><div class="grow"></div><button class="btn btn-primary" data-mx="publish" ${iss.length||S.mx.status==="saving"?"disabled":""}>${S.mx.status==="saving"?"Publishing":S.mx.src==="sheet"?"Publish to Google Sheet":"Publish"}</button>`);
+  }
+}
+function moveArr(a,i,j){const x=a.splice(i,1)[0]; a.splice(j,0,x);}
+function mxAction(k,ds){
+  const p=S.mxPanel, m=S.draft;
+  switch(k){
+    case "edit": return startEdit();
+    case "discard": return discardEdit();
+    case "reload": return loadSheetMatrix();
+    case "signout": return signOut();
+    case "close": return closeDrawer();
+    case "review": return openPanel({kind:"review"});
+    case "publish": return publish();
+    case "latest": return takeLatest();
+    case "cell": if(!m) return; return openPanel({kind:"cell",r:+ds.r,c:+ds.c,chain:m.cells[+ds.r][+ds.c].slice(),alsoL:[],alsoD:[]});
+    case "apadd": p.chain.push(""); renderPanel(); { const ins=$("#drawer").querySelectorAll("[data-ap]"); ins[ins.length-1]?.focus(); } return;
+    case "aprm": p.chain.splice(+ds.i,1); return renderPanel();
+    case "apup": moveArr(p.chain,+ds.i,+ds.i-1); return renderPanel();
+    case "apdown": moveArr(p.chain,+ds.i,+ds.i+1); return renderPanel();
+    case "cellok": {
+      const ch=p.chain.map(e=>e.trim().toLowerCase()).filter(Boolean);
+      const bad=ch.find(e=>!EMAIL_RE.test(e)); if(bad){toast(`"${bad}" is not a valid email.`);return;}
+      if(!ch.length){toast("Add at least one approver.");return;}
+      const targets=[[p.r,p.c]].concat(p.alsoL.map(r=>[r,p.c]),p.alsoD.map(c=>[p.r,c]));
+      targets.forEach(([r,c])=>m.cells[r][c]=ch.slice());
+      closeDrawer(); render(); toast(targets.length>1?`Updated ${targets.length} cells`:"Cell updated"); return;
+    }
+    case "adddept": return openPanel({kind:"dept",c:-1,name:"",copy:-1});
+    case "dept": return openPanel({kind:"dept",c:+ds.c,name:m.depts[+ds.c],confirm:false});
+    case "dleft": case "dright": {
+      const j=p.c+(k==="dleft"?-1:1); moveArr(m.depts,p.c,j); m.cells.forEach(row=>moveArr(row,p.c,j)); moveArr(S.dmeta.deptOrig,p.c,j);
+      S.dmeta.ops.push(`Moved department ${m.depts[j]} ${k==="dleft"?"left":"right"}`); p.c=j; render(); return renderPanel(); }
+    case "ddel": {
+      if(!p.confirm){p.confirm=true; return renderPanel();}
+      if(m.depts.length<2){toast("The matrix needs at least one department.");return;}
+      const name=m.depts[p.c]; m.depts.splice(p.c,1); m.cells.forEach(row=>row.splice(p.c,1)); S.dmeta.deptOrig.splice(p.c,1);
+      S.dmeta.ops.push(`Deleted department ${name}`); closeDrawer(); render(); toast(`${name} removed`); return; }
+    case "deptok": {
+      const name=$("#pName").value.trim(); if(!name){toast("Give the department a name.");return;}
+      if(m.depts.some((x,i)=>i!==p.c&&x.toLowerCase()===name.toLowerCase())){toast("That department already exists.");return;}
+      if(p.c<0){const cp=+$("#pCopy").value; m.depts.push(name); m.cells.forEach(row=>row.push(cp>=0?row[cp].slice():[])); S.dmeta.deptOrig.push(null);
+        S.dmeta.ops.push(`Added department ${name}${cp>=0?` (approvers copied from ${m.depts[cp]})`:""}`);}
+      else if(name!==m.depts[p.c]){S.dmeta.ops.push(`Renamed department ${m.depts[p.c]} to ${name}`); m.depts[p.c]=name;}
+      closeDrawer(); render(); return; }
+    case "addlevel": return openPanel({kind:"level",r:-1,code:"",title:"",track:"Individual Contributor",pos:0,copy:-1});
+    case "level": { const l=m.levels[+ds.r]; return openPanel({kind:"level",r:+ds.r,code:l.code,title:l.title,track:l.track,confirm:false}); }
+    case "lup": case "ldown": {
+      const j=p.r+(k==="lup"?-1:1); [m.levels,m.cells,S.dmeta.levelOrig].forEach(a=>moveArr(a,p.r,j));
+      S.dmeta.ops.push(`Moved level ${m.levels[j].code} ${k==="lup"?"up":"down"}`); p.r=j; render(); return renderPanel(); }
+    case "ldel": {
+      if(!p.confirm){p.confirm=true; return renderPanel();}
+      if(m.levels.length<2){toast("The matrix needs at least one level.");return;}
+      const code=m.levels[p.r].code; [m.levels,m.cells,S.dmeta.levelOrig].forEach(a=>a.splice(p.r,1));
+      S.dmeta.ops.push(`Deleted level ${code}`); closeDrawer(); render(); toast(`Level ${code} removed`); return; }
+    case "levelok": {
+      const code=$("#pCode").value.trim().toUpperCase(), title=$("#pTitle").value.trim(), track=$("#pTrack").value.trim();
+      if(!code||!title){toast("Add a level code and title.");return;}
+      if(m.levels.some((x,i)=>i!==p.r&&x.code.toUpperCase()===code)){toast(`Level ${code} already exists.`);return;}
+      if(p.r<0){const pos=+$("#pPos").value, cp=+$("#pCopy").value;
+        m.levels.splice(pos,0,{code,title,track}); m.cells.splice(pos,0,m.depts.map((_,c)=>cp>=0?m.cells[cp][c].slice():[])); S.dmeta.levelOrig.splice(pos,0,null);
+        S.dmeta.ops.push(`Added level ${code}, ${title}`);}
+      else{const o=m.levels[p.r]; if(o.code!==code) S.dmeta.ops.push(`Renamed level ${o.code} to ${code}`); Object.assign(o,{code,title,track});}
+      closeDrawer(); render(); return; }
+  }
 }
 
 /* ---------- detail drawer ---------- */
@@ -799,7 +1123,7 @@ function openDrawer(id){
   </div>`:""}`;
   $("#drawer").classList.add("on"); $("#scrim").classList.add("on"); if(!wasOpen) $("#closeD").focus();
 }
-function closeDrawer(){S.openId=null;$("#drawer").classList.remove("on");$("#scrim").classList.remove("on");}
+function closeDrawer(){S.openId=null;S.mxPanel=null;$("#drawer").classList.remove("on");$("#scrim").classList.remove("on");}
 
 function act(kind,id){
   if(S.readOnly){toast("You have view-only access.");return;}
@@ -826,16 +1150,12 @@ function render(){
     $("#reqForm").addEventListener("change",renderChecks);
     $("#reqForm").addEventListener("submit",submitForm);}
   if(S.view==="dash"){$("#q").addEventListener("input",e=>{S.q=e.target.value; const pos=e.target.selectionStart; render(); const n=$("#q"); n.focus(); n.setSelectionRange(pos,pos);});}
-  if(S.view==="matrix"){
-    v.querySelectorAll("[data-head]").forEach(i=>i.addEventListener("change",e=>{S.matrix.depts[+e.target.dataset.head].head=e.target.value.trim()||"TBC";saveMatrix();toast("Approval matrix updated");}));
-    $("#execFrom").onchange=e=>{S.matrix.execFrom=+e.target.value;saveMatrix();render();toast("Senior role threshold updated");};
-    $("#execName").onchange=e=>{S.matrix.exec=e.target.value.trim();saveMatrix();render();toast("Approval matrix updated");};
-    $("#finalName").onchange=e=>{S.matrix.final=e.target.value.trim()||"Kylee";saveMatrix();render();toast("Approval matrix updated");};
-  }
+  if(S.view==="matrix") ensureGsi();
 }
 
 document.addEventListener("click",e=>{
-  const g=e.target.closest("[data-go]"); if(g){S.view=g.dataset.go;closeDrawer();render();$("main").scrollTop=0;return;}
+  const mxb=e.target.closest("[data-mx]"); if(mxb){ if(!mxb.disabled) mxAction(mxb.dataset.mx,mxb.dataset); return; }
+  const g=e.target.closest("[data-go]"); if(g){ if(S.draft&&g.dataset.go!=="matrix"&&!confirm("You have unpublished matrix changes. Leave them as a draft and switch page?")) return;S.view=g.dataset.go;closeDrawer();render();$("main").scrollTop=0;return;}
   for(const k of ["approve","decline","post","nudge"]){const b=e.target.closest(`[data-${k}]`); if(b){if(!b.disabled) act(k,b.dataset[k]);return;}}
   const o=e.target.closest("[data-open]"); if(o){openDrawer(o.dataset.open);return;}
   const l=e.target.closest("[data-lane]"); if(l){const n=+l.dataset.lane; S.lane=S.lane===n?null:n; render(); return;}
@@ -848,6 +1168,17 @@ document.addEventListener("keydown",e=>{
   if(e.key==="Escape") closeDrawer();
   if(e.key==="Enter"){const t=e.target.closest("tr[data-open]"); if(t) t.click();}
 });
+$("#drawer").addEventListener("input",e=>{
+  const p=S.mxPanel; if(!p) return; const t=e.target;
+  if(t.dataset.ap!==undefined){ const i=+t.dataset.ap; p.chain[i]=t.value.trim().toLowerCase(); const h=$("#aph"+i), v=p.chain[i], prob=v?emailProblem(v):"Enter an email";
+    if(h){h.classList.toggle("bad",!!prob); h.textContent=prob||nameOf(v);} }
+});
+$("#drawer").addEventListener("change",e=>{
+  const p=S.mxPanel, t=e.target; if(!p||!t.dataset.also) return;
+  const arr=t.dataset.also==="l"?p.alsoL:p.alsoD, v=+t.value, i=arr.indexOf(v);
+  if(t.checked&&i<0) arr.push(v); if(!t.checked&&i>=0) arr.splice(i,1);
+  const ok=$("#drawer [data-mx=cellok]"); if(ok){const n=p.alsoL.length+p.alsoD.length; ok.textContent=n?`Apply to ${1+n} cells`:"Apply";}
+});
 $("#viewer").addEventListener("change",e=>setViewer(e.target.value));
 $("#reset").addEventListener("click",async()=>{
   if(!confirm("Reset to the sample requests? This replaces the current data for everyone.")) return;
@@ -856,9 +1187,9 @@ $("#reset").addEventListener("click",async()=>{
     try{
       for(const r of S.reqs) if(!fresh.some(f=>f.id===r.id)) await DB.collection("requests").doc(r.id).delete();
       for(const r of fresh) await DB.collection("requests").doc(r.id).set(r);
-      await DB.doc("config/matrix").set(JSON.parse(JSON.stringify(DEFAULT_MATRIX)));
+      if(S.mx.src==="demo") await DB.doc("config/matrix").set(clone(DEFAULT_MATRIX));
     }catch(err){writeErr(err);return;}
-  }else{S.reqs=fresh;S.matrix=JSON.parse(JSON.stringify(DEFAULT_MATRIX));saveLocal();}
+  }else{S.reqs=fresh; if(S.mx.src==="demo"){S.matrix=clone(DEFAULT_MATRIX);S.mx.log=[];} S.draft=null; saveLocal();}
   S.lane=null;S.filter="all";closeDrawer();render();toast("Demo data reset");
 });
 render();
